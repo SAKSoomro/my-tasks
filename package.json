@@ -1,0 +1,37 @@
+{
+  "name": "my-tasks",
+  "version": "1.0.0",
+  "description": "minimalist task management app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saksoomro/my-tasks.git"
+  },
+  "keywords": [
+    "task",
+    "management",
+    "app"
+  ],
+  "author": "shoaib ali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saksoomro/my-tasks/issues"
+  },
+  "homepage": "https://github.com/saksoomro/my-tasks#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
