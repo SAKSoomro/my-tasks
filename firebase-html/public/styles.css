@@ -286,4 +286,21 @@ footer ul {
     width: 16px;
     margin-right: 4px;
   }
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .hero-text {
+    font-size: 36px;
+  }
+  .hero-media img {
+    width: 320px;
+  }
+  .container {
+    width: 95%;
+  }
+  .features ul li {
+    width: 100%;
+    font-size: 14px;
+  }
 }
