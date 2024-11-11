@@ -271,16 +271,16 @@ onAuthStateChanged(auth, (user) => {
               <li><h2>Free & Open-Source</h2></li>
             </ul>
           </div>
+          <div class="legal-page-content"></div>
         </div>
       `;
 
     footer.innerHTML = `
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Legal</a></li>
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">Donate</a></li>
+          <li><a href="#about" id="about">About</a></li>
+          <li><a href="#faq" id="faq">FAQ</a></li>
+          <li><a href="#legal" id="legal">Legal</a></li>
+          <li><a href="https://github.com/SAKSoomro/my-tasks" target=”_blank”>GitHub</a></li>
         </ul>
       `;
 
@@ -307,6 +307,92 @@ onAuthStateChanged(auth, (user) => {
         .catch((error) => {
           console.log(error);
         });
+    });
+
+    const legalPageContent = document.querySelector(".legal-page-content");
+
+    function openLegalPage(contentHtml) {
+      modalOverlay.style.display = "block";
+      legalPageContent.style.display = "block";
+      legalPageContent.innerHTML = contentHtml;
+
+      document.querySelector(".lpc-close-btn").addEventListener("click", () => {
+        modalOverlay.style.display = "none";
+        legalPageContent.style.display = "none";
+      });
+    }
+
+    document.getElementById("about").addEventListener("click", () => {
+      const aboutContent = `
+        <div class="lpc-header">
+          <h2 class="block-title">About</h2>
+          <img src="close-48.png" alt="close button" class="lpc-close-btn" />
+        </div>
+        <p>Created and managed by X/@xioaib, an indie-app developer</p>
+        <div class="gap-4"></div>
+        <p>The Tasks — is a minimalist app task management app, privacy-focused, free forever, open-source.</p>
+        <div class="gap-4"></div>
+        <p>Sync across devices, less-friction to get started, pretty minimalist is the way to get started easily, without hours in customizing the app.</p>
+        <div class="gap-4"></div>
+        <p>Goal is to make you productive while saving your time.</p>
+      `;
+      openLegalPage(aboutContent);
+    });
+
+    document.getElementById("faq").addEventListener("click", () => {
+      const faqContent = `
+        <div class="lpc-header">
+          <h2 class="block-title">FAQ</h2>
+          <img src="close-48.png" alt="close button" class="lpc-close-btn" />
+        </div>
+        <ul class="faq-list">
+          <li>
+            <h3>Does this app support sync to different devices?</h3>
+            <p>Yes, this app sync your all tasks to cloud, and can be used across many devices. Currently only web version is live, but soon will be available for other platforms.</p>
+          </li>
+          <li>
+            <h3>Is this app secure to use?</h3>
+            <p>This app is completely secure to use, we don't share the data, no one sees the data, as there is no team, only created and managed by one person, soon this app will be completely encrypted.</p>
+          </li>
+          <li>
+            <h3>Can I recover the deleted data?</h3>
+            <p>No, because we don't collect or make back up of your users' data, it's users' data, only they can read or manage it, once deleted it's not recoverable.</p>
+          </li>
+        <ul>
+      `;
+      openLegalPage(faqContent);
+    });
+
+    document.getElementById("legal").addEventListener("click", () => {
+      const legalContent = `
+        <div class="lpc-header">
+          <h2 class="block-title">Privacy Policy</h2>
+          <img src="close-48.png" alt="close button" class="lpc-close-btn" />
+        </div>
+        <ul class="faq-list">
+          <li>
+            <h3>Data Collection</h3>
+            <p>We collect basic information from your Google account (name, email, profile picture) for authentication. We do not store passwords.</p>
+          </li>
+          <li>
+            <h3>Data Usage</h3>
+            <p>Your data is used solely for authentication and to personalize your experience within the app.</p>
+          </li>
+          <li>
+            <h3>Data Security</h3>
+            <p>Your data is securely stored and transmitted using industry-standard encryption. We use on Google’s API for authentication.</p>
+          </li>
+          <li>
+            <h3>Data Sharing</h3>
+            <p>We do not share, sell, or rent your personal data to third parties.</p>
+          </li>
+          <li>
+            <h3>Data Retention</h3>
+            <p>Your data is retained for as long as your account is active. If you delete your account, all personal data will be permanently removed.</p>
+          </li>
+        </ul>
+      `;
+      openLegalPage(legalContent);
     });
   }
 });

@@ -181,6 +181,29 @@ header {
 .new-task-btn:hover {
   cursor: pointer;
 }
+.legal-page-content {
+  position: fixed;
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: white;
+  padding: 1.4em;
+  border-radius: 1.4em;
+  overflow: hidden;
+  display: none;
+}
+.legal-page-content p {
+  font-size: 18px;
+  margin: 0.4em 0;
+}
+.faq-list li {
+  margin: 1.4em 0;
+}
+.gap-4 {
+  margin: 1.4em;
+}
 .show-task-wrapper,
 .new-task-wrapper {
   position: absolute;
@@ -193,13 +216,14 @@ header {
   display: none;
 }
 .modal-overlay {
-  position: absolute;
-  width: 100vw;
+  position: fixed;
+  width: 100%;
   top: 0;
-  color: red;
-  height: 100vh;
+  left: 0;
   z-index: 1;
+  height: 100%;
   background-color: #00000066;
+  overflow: hidden;
   display: none;
 }
 .new-task-wrapper fieldset {
@@ -249,6 +273,15 @@ header {
   align-items: center;
   justify-content: space-between;
   margin-right: 4em;
+}
+.lpc-header {
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+}
+.lpc-header img {
+  width: 28px;
+  cursor: pointer;
 }
 footer {
   display: flex;
