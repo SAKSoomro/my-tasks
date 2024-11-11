@@ -10,45 +10,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>My Tasks | Minimalist Task Management App | Homepage</title>
+    <title>The Tasks | Minimalist Task Management App | Homepage</title>
   </head>
   <body>
     <header>
-      <h1 class="h-logo">My Tasks</h1>
-      <p>Login</p>
+      <h1 class="h-logo">The Tasks</h1>
+      <div id="header-auth"></div>
     </header>
-    <main>
-      <div class="container">
-        <div class="hero">
-          <div class="hero-text">
-            Minimalist <br />
-            Task Management <br />
-            App
-          </div>
-          <div class="hero-media">
-            <img src="min-my-tasks.png" alt="my tasks showcase" />
-          </div>
-        </div>
-        <div class="features">
-          <h1 class="block-title">Why My Tasks?</h1>
-          <ul>
-            <li><h2>Less Overwhelming to use</h2></li>
-            <li><h2>Less Friction To Get Started</h2></li>
-            <li><h2>Sync Tasks accross All devices</h2></li>
-            <li><h2>Privacy-First, Encrypted</h2></li>
-            <li><h2>Free & Open-Source</h2></li>
-          </ul>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Legal</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">Donate</a></li>
-      </ul>
-    </footer>
+    <div class="modal-overlay"></div>
+    <main id="main-content"></main>
+    <footer id="main-footer"></footer>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>

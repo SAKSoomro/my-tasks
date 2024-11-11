@@ -1,4 +1,4 @@
-# my-tasks
+# The Tasks
 
 minimalist task management app
 

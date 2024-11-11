@@ -21,6 +21,38 @@ li {
 a {
   color: black;
 }
+.btn-outline {
+  border: 1px solid black;
+  padding: 0.4em 1.4em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease 0.25s;
+}
+.btn-outline:hover {
+  background-color: black;
+  color: white;
+}
+.btn-wide {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.6em;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.6em;
+  margin: 4px 0;
+}
+.btn-danger {
+  background-color: #dc2626;
+}
+.close-btn {
+  cursor: pointer;
+}
+.close-btn img {
+  width: 28px;
+}
 body {
   font-family: "Inter", serif;
 }
@@ -35,9 +67,34 @@ header {
 .h-logo {
   font-weight: 900;
 }
-header p,
-a {
-  font-weight: 500;
+.hp-thumbnail {
+  width: 32px;
+  height: 32px;
+}
+.hp-thumbnail img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.hp-options {
+  padding-top: 0.4em;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: max-content;
+}
+.hp-options li {
+  margin: 0.4em 0;
+}
+.header-profile {
+  cursor: pointer;
+  position: relative;
+}
+.header-profile:hover > .hp-options {
+  opacity: 1;
+  visibility: visible;
 }
 .hero {
   margin-top: 4rem;
@@ -68,6 +125,131 @@ a {
 .features ul li h2 {
   font-weight: 800;
 }
+.tasks {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 40px;
+}
+.task {
+  background-color: #ffffff;
+  padding: 1.4em;
+  width: 210px;
+  height: 180px;
+  border-radius: 1.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.task:hover {
+  cursor: pointer;
+}
+.task p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.task h1 {
+  font-weight: 800;
+}
+.task span {
+  color: #8a898e;
+  font-weight: 600;
+}
+.task-timeleft {
+  display: flex;
+  align-items: center;
+}
+.task-timeleft img {
+  width: 19px;
+  margin-right: 4px;
+}
+.new-task-btn {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 56px;
+  padding: 0 0.4em;
+  font-weight: 700;
+  padding-bottom: 0.1em;
+  border-radius: 16px;
+}
+.new-task-btn:hover {
+  cursor: pointer;
+}
+.show-task-wrapper,
+.new-task-wrapper {
+  position: absolute;
+  width: 400px;
+  background-color: white;
+  left: 40%;
+  padding: 1.4em;
+  border-radius: 1.4em;
+  z-index: 2;
+  display: none;
+}
+.modal-overlay {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  color: red;
+  height: 100vh;
+  z-index: 1;
+  background-color: #00000066;
+  display: none;
+}
+.new-task-wrapper fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 1.4em 0;
+  gap: 8px;
+}
+.new-task-wrapper input {
+  font-size: 18px;
+  padding: 0.4em;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+.new-task-wrapper input[type="date"] {
+  font-family: Inter, sans-serif;
+}
+.new-task-wrapper textarea {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  padding: 0.4em;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
+.ntw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.std-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.std-data {
+  margin: 2em 0;
+  font-size: 18px;
+}
+.std-data h4 {
+  color: #737373;
+  margin-bottom: 4px;
+}
+.std-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 4em;
+}
 footer {
   display: flex;
   flex-direction: column;
@@ -77,4 +259,31 @@ footer {
 footer ul {
   display: flex;
   gap: 20px;
+}
+@media (max-width: 480px) {
+  .tasks {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10;
+  }
+  .task {
+    width: 170px;
+  }
+  .task p {
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .task h1 {
+    font-weight: 600;
+  }
+  .task span {
+    color: #8a898e;
+    font-weight: 500;
+  }
+  .task-timeleft img {
+    width: 16px;
+    margin-right: 4px;
+  }
 }
