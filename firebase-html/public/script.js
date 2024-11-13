@@ -127,6 +127,8 @@ onAuthStateChanged(auth, (user) => {
         </div>
         `;
 
+      footer.innerHTML = ``;
+
       const closeNTW = document.getElementById("ntw-close-btn");
       const closeSTD = document.getElementById("std-close-btn");
       const newTaskWrapper = document.querySelector(".new-task-wrapper");
