@@ -61,6 +61,11 @@ onAuthStateChanged(auth, (user) => {
         });
       });
       main.innerHTML = `
+      <p class="light-text">
+        ${
+          !tasks.length > 0 ? `You don't have Tasks tap + to create to one` : ""
+        }
+        </p>
         <div class="tasks">
           <div class="new-task-wrapper">
             <div class="ntw-header">
@@ -106,6 +111,7 @@ onAuthStateChanged(auth, (user) => {
             <button id="completeTask" class="btn-wide">Mark as Completed</button>
             <button id="deleteTask" class="btn-wide btn-danger">Delete Task</button>
         </div>
+        
           <div class="tasks">
             ${tasks
               .map((task) => {
@@ -126,8 +132,6 @@ onAuthStateChanged(auth, (user) => {
           </div>
         </div>
         `;
-
-      footer.innerHTML = ``;
 
       const closeNTW = document.getElementById("ntw-close-btn");
       const closeSTD = document.getElementById("std-close-btn");
@@ -235,6 +239,8 @@ onAuthStateChanged(auth, (user) => {
             </ul>
           </div>
       `;
+
+    document.querySelector("footer").innerHTML = "";
 
     const logoutButton = document.getElementById("btn-logout");
     logoutButton.addEventListener("click", () => {

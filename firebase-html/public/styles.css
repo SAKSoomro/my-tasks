@@ -283,6 +283,11 @@ header {
   width: 28px;
   cursor: pointer;
 }
+.light-text {
+  text-align: center;
+  color: #808080;
+  font-weight: 600;
+}
 footer {
   display: flex;
   flex-direction: column;
